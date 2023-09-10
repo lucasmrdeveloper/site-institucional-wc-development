@@ -1,10 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
+    effectScroll()
     categoriesRwd()
     menuAbout()
     SliderTestimonials()
     modalPortfolio()
     faq()
 })
+
+
+function effectScroll() {
+    const observerSections = new IntersectionObserver(observadorElementosSections, {threshold:0.1})
+
+    const sections = document.querySelectorAll('.content-hidden')
+
+    sections.forEach(section => {
+        observerSections.observe(section)
+    })
+
+    function observadorElementosSections(sections) {
+        sections.forEach(section => {
+    
+          if (section.isIntersecting) {
+            showSections(section)
+          }
+        })
+      }
+
+
+    function showSections(elemento) {
+        elemento.target.classList.add('js-content-show')
+    }
+}
 
 function effectScroll() {
     const observerSections = new IntersectionObserver(observadorElementosSections, {threshold:0.1})

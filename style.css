@@ -18,6 +18,12 @@
 }
 
 
+/* ----- Effect scroll ----- */
+.content-hidden{opacity:0; transform:translateX(-50%); transition:opacity 1s, transform 1s;}
+
+.js-content-show{opacity:1; transform:translateX(0%);}
+
+
 /* ----- Header ----- */
 .header-container{padding:30px 50px 0;}
 
