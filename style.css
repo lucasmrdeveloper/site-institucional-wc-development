@@ -250,6 +250,12 @@
 .footer-social-img{height:25px;}
 
 
+/* ----- Copyright ----- */
+.copyright-container{background-color:var(--background-color-section); padding:20px 50px;}
+
+.copyright-box{max-width:1200px; text-align:center;}
+
+
 /* ----- Responsive ----- */
 @media (max-width:430px) {
     /* ----- About ----- */
