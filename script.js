@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function effectScroll() {
     const observerSections = new IntersectionObserver(observadorElementosSections, {threshold:0.1})
 
-    const sections = document.querySelectorAll('.content-hidden')
+    const sections = document.querySelectorAll('.conteudo-escondido')
 
     sections.forEach(section => {
         observerSections.observe(section)
@@ -28,7 +28,7 @@ function effectScroll() {
 
 
     function showSections(elemento) {
-        elemento.target.classList.add('js-content-show')
+        elemento.target.classList.add('js-conteudo-mostrar')
     }
 }
 
