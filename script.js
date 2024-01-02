@@ -32,30 +32,6 @@ function effectScroll() {
     }
 }
 
-function effectScroll() {
-    const observerSections = new IntersectionObserver(observadorElementosSections, {threshold:0.1})
-
-    const sections = document.querySelectorAll('.content-hidden')
-
-    sections.forEach(section => {
-        observerSections.observe(section)
-    })
-
-    function observadorElementosSections(sections) {
-        sections.forEach(section => {
-    
-          if (section.isIntersecting) {
-            showSections(section)
-          }
-        })
-      }
-
-
-    function showSections(elemento) {
-        elemento.target.classList.add('js-content-show')
-    }
-}
-
 function categoriesRwd() {
     const body = document.body
     const iconMenuRwd = document.querySelector('.header-categories-btn-rwd')
