@@ -746,7 +746,7 @@
     }
 }
 
-@media (max-width:759px) {
+@media (max-width:760px) {
     /* ----- Informativo ----- */
     .informativo-box {
         flex-direction: column;
