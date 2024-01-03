@@ -34,13 +34,17 @@ function efeitoScroll() {
 function categoriasRwd() {
     const body = document.body
     const iconeMenuRwd = document.querySelector('.header-categorias-btn-rwd')
-    const categorias = document.querySelector('.header-categorias-box')
+    const categoriasBox = document.querySelector('.header-categorias-box')
+    const categorias = document.querySelectorAll('.header-categoria')
 
+    categorias.forEach(categoria => {
+        categoria.addEventListener('click', mostrarSecao)
+    })
 
     iconeMenuRwd.addEventListener('click', () => {
-        categorias.classList.toggle('categorias-visivel-rwd')
+        categoriasBox.classList.toggle('categorias-visivel-rwd')
         
-        if (categorias.classList.contains('categorias-visivel-rwd')) {
+        if (categoriasBox.classList.contains('categorias-visivel-rwd')) {
             iconeMenuRwd.src="imgs/menu-rwd/menu-rwd-fechar.svg"
 
             removerScroll()
@@ -51,6 +55,14 @@ function categoriasRwd() {
             adicionarScroll()
         }
     })
+
+    function mostrarSecao() {
+        iconeMenuRwd.src = "imgs/menu-rwd/menu-rwd-abrir.svg"
+
+        categoriasBox.classList.remove('categorias-visivel-rwd')
+
+        body.classList.add('scroll-visivel')
+    }
 
 
     function removerScroll() {
