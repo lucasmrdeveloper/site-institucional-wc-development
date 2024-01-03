@@ -362,7 +362,7 @@
     margin-top:10px;
 }
 
-.depoimento-text{
+.depoimento-texto{
     line-height:1.5; 
     margin-top:10px;
     padding:0 50px;
@@ -688,6 +688,17 @@
 
 /* ----- Responsivo ----- */
 @media (max-width:430px) {
+    .sobre-container,
+    .servicos-container,
+    .depoimentos-container,
+    .portfolio-container,
+    .faq-container,
+    .contatos-container,
+    .footer-container{
+        padding:30px;
+    }
+
+    
     /* ----- Sobre ----- */
     .sobre-subtitulos-box{
         flex-direction:column;
