@@ -1,16 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-    effectScroll()
-    categoriesRwd()
-    menuAbout()
-    SliderTestimonials()
+    efeitoScroll()
+    categoriasRwd()
+    menuSobre()
+    sliderDepoimentos()
     modalPortfolio()
     faq()
 })
 
 
-function effectScroll() {
+function efeitoScroll() {
     const observerSections = new IntersectionObserver(observadorElementosSections, {threshold:0.1})
-
     const sections = document.querySelectorAll('.conteudo-escondido')
 
     sections.forEach(section => {
@@ -24,7 +23,7 @@ function effectScroll() {
             showSections(section)
           }
         })
-      }
+    }
 
 
     function showSections(elemento) {
@@ -32,178 +31,179 @@ function effectScroll() {
     }
 }
 
-function categoriesRwd() {
+function categoriasRwd() {
     const body = document.body
-    const iconMenuRwd = document.querySelector('.header-categories-btn-rwd')
-    const categories = document.querySelector('.header-categories-box')
+    const iconeMenuRwd = document.querySelector('.header-categorias-btn-rwd')
+    const categorias = document.querySelector('.header-categorias-box')
 
-    iconMenuRwd.addEventListener('click', () => {
-        categories.classList.toggle('categories-visible-rwd')
+
+    iconeMenuRwd.addEventListener('click', () => {
+        categorias.classList.toggle('categorias-visivel-rwd')
         
-        if (categories.classList.contains('categories-visible-rwd')) {
-            iconMenuRwd.src="/imgs/menu-rwd/menu-rwd-closet.svg"
+        if (categorias.classList.contains('categorias-visivel-rwd')) {
+            iconeMenuRwd.src="imgs/menu-rwd/menu-rwd-fechar.svg"
 
-            removeScroll()
+            removerScroll()
         }
         else {
-            iconMenuRwd.src="/imgs/menu-rwd/menu-rwd-open.svg"
+            iconeMenuRwd.src="imgs/menu-rwd/menu-rwd-abrir.svg"
 
-            addScroll()
+            adicionarScroll()
         }
     })
 
-    function removeScroll() {
-        body.classList.remove('scroll-visible')
-        body.classList.add('scroll-hidden')
+
+    function removerScroll() {
+        body.classList.remove('scroll-visivel')
+        body.classList.add('scroll-escondido')
     }
 
-    function addScroll() {
-        body.classList.remove('scroll-hidden')
-        body.classList.add('scroll-visible')
+    function adicionarScroll() {
+        body.classList.remove('scroll-escondido')
+        body.classList.add('scroll-visivel')
     }
 }
 
-function menuAbout() {
-    const subtitleTrajetory = document.querySelector('.about-subtitle-trajetory')
-    const subtitleExperience = document.querySelector('.about-subtitle-experience')
-    const subtitleInnovation = document.querySelector('.about-subtitle-innovation')
+function menuSobre() {
+    const subtituloTrajetoria = document.querySelector('.sobre-subtitulo-trajetoria')
+    const subtituloExperiencia = document.querySelector('.sobre-subtitulo-experiencia')
+    const subtituloInovacao = document.querySelector('.sobre-subtitulo-inovacao')
 
-    const textTrajetory = document.querySelector('.about-trajetory-text')
-    const textExperience = document.querySelector('.about-experience-text')
-    const textInnovation = document.querySelector('.about-innovation-text')
+    const textoTrajetoria = document.querySelector('.sobre-trajetoria-texto')
+    const textoExperiencia = document.querySelector('.sobre-experiencia-texto')
+    const textoInovacao = document.querySelector('.sobre-inovacao-texto')
 
-    const subtitles = document.querySelectorAll('.about-subtitles')
-    const texts = document.querySelectorAll('.about-texts')
+    const subtitulos = document.querySelectorAll('.sobre-subtitulos')
+    const textos = document.querySelectorAll('.sobre-textos')
 
 
-    subtitleTrajetory.addEventListener('click', () => {
-        removeTextVisible()
-        removeSubtitleBackground()
+    subtituloTrajetoria.addEventListener('click', () => {
+        removerTextoVisivel()
+        removerFundoSubtitulo()
 
-        subtitleTrajetory.classList.add('about-subtitle-background')
-        textTrajetory.classList.add('about-text-visible')
+        subtituloTrajetoria.classList.add('sobre-subtitulo-fundo')
+        textoTrajetoria.classList.add('sobre-texto-visivel')
+    })
+
+    subtituloExperiencia.addEventListener('click', () => {
+        removerTextoVisivel()
+        removerFundoSubtitulo()
+
+        subtituloExperiencia.classList.add('sobre-subtitulo-fundo')
+        textoExperiencia.classList.add('sobre-texto-visivel')
+    })
+
+    subtituloInovacao.addEventListener('click', () => {
+        removerTextoVisivel()
+        removerFundoSubtitulo()
+
+        subtituloInovacao.classList.add('sobre-subtitulo-fundo')
+        textoInovacao.classList.add('sobre-texto-visivel')
     })
 
 
-    subtitleExperience.addEventListener('click', () => {
-        removeTextVisible()
-        removeSubtitleBackground()
-
-        subtitleExperience.classList.add('about-subtitle-background')
-        textExperience.classList.add('about-text-visible')
-    })
-
-    subtitleInnovation.addEventListener('click', () => {
-        removeTextVisible()
-        removeSubtitleBackground()
-
-        subtitleInnovation.classList.add('about-subtitle-background')
-        textInnovation.classList.add('about-text-visible')
-    })
-
-    function removeTextVisible() {
-        texts.forEach(text => {
-            text.classList.remove('about-text-visible')
+    function removerTextoVisivel() {
+        textos.forEach(texto => {
+            texto.classList.remove('sobre-texto-visivel')
         })
     }
 
-    function removeSubtitleBackground() {
-        subtitles.forEach(subtitle => {
-            subtitle.classList.remove('about-subtitle-background')
+    function removerFundoSubtitulo() {
+        subtitulos.forEach(subtitulo => {
+            subtitulo.classList.remove('sobre-subtitulo-fundo')
         })
     }
 }
 
-function SliderTestimonials() {
-    const arrowLeft = document.querySelector('.testimonials-arrow-left')
-    const arrowRight = document.querySelector('.testimonials-arrow-right')
-    const testimonials = document.querySelectorAll('.testimonial-item')
+function sliderDepoimentos() {
+    const setaEsquerda = document.querySelector('.depoimentos-seta-esquerda')
+    const setaDireita = document.querySelector('.depoimentos-seta-direita')
+    const depoimentos = document.querySelectorAll('.depoimento-item')
 
-    let indexTestimonialVisible = 0
-    const lastTestimonial = testimonials.length - 1
+    let indexDepoimentoVisivel = 0
+    const ultimoDepoimento = depoimentos.length - 1
 
-    arrowLeft.addEventListener('click', () => {
-        if (indexTestimonialVisible == 0) {
+
+    setaEsquerda.addEventListener('click', () => {
+        if (indexDepoimentoVisivel == 0) {
             return
         }
         else {
-            indexTestimonialVisible--
+            indexDepoimentoVisivel--
 
-            removeTestimonialVisible()
-
-            addTestimonialVisible()
+            removerDepoimentoVisivel()
+            adicionarDepoimentoVisivel()
         }
     })
 
-    arrowRight.addEventListener('click', () => {
-        if (indexTestimonialVisible == lastTestimonial) {
+    setaDireita.addEventListener('click', () => {
+        if (indexDepoimentoVisivel == ultimoDepoimento) {
             return
         }
         else {
-            indexTestimonialVisible++
+            indexDepoimentoVisivel++
 
-            removeTestimonialVisible()
-
-            addTestimonialVisible()
+            removerDepoimentoVisivel()
+            adicionarDepoimentoVisivel()
         }
     })
 
 
-    function removeTestimonialVisible() {
-        testimonials.forEach(testimonial => {
-            testimonial.classList.remove('testimonial-visible')
+    function removerDepoimentoVisivel() {
+        depoimentos.forEach(depoimento => {
+            depoimento.classList.remove('depoimento-visivel')
         })
     }
 
-    function addTestimonialVisible() {
-        testimonials[indexTestimonialVisible].classList.add('testimonial-visible')
+    function adicionarDepoimentoVisivel() {
+        depoimentos[indexDepoimentoVisivel].classList.add('depoimento-visivel')
     }
 }
 
 function modalPortfolio() {
-    const firstImage = document.querySelector('.portfolio-img-1')
-    const secondImage = document.querySelector('.portfolio-img-2')
-    const thirdImage = document.querySelector('.portfolio-img-3')
+    const primeiraImagem = document.querySelector('.portfolio-img-1')
+    const segundaImagem = document.querySelector('.portfolio-img-2')
+    const terceiraImagem = document.querySelector('.portfolio-img-3')
 
-    const firstModal = document.querySelector('.portfolio-modal-1')
-    const secondModal = document.querySelector('.portfolio-modal-2')
-    const ThirdModal = document.querySelector('.portfolio-modal-3')
+    const primeiroModal = document.querySelector('.portfolio-modal-1')
+    const segundoModal = document.querySelector('.portfolio-modal-2')
+    const terceiroModal = document.querySelector('.portfolio-modal-3')
 
-    const btnsCloseModal = document.querySelectorAll('.portfolio-modal-close')
+    const btnsFecharModal = document.querySelectorAll('.portfolio-modal-fechar')
+    const modais = document.querySelectorAll('.portfolio-modal')
 
-    const modals = document.querySelectorAll('.portfolio-modal')
 
-    firstImage.addEventListener('click', () => {
-        removeModalVisible()
+    primeiraImagem.addEventListener('click', () => {
+        removerModalVisivel()
 
-        firstModal.classList.add('portfolio-modal-visible')
+        primeiroModal.classList.add('portfolio-modal-visivel')
     })
 
-    secondImage.addEventListener('click', () => {
-        removeModalVisible()
+    segundaImagem.addEventListener('click', () => {
+        removerModalVisivel()
 
-        secondModal.classList.add('portfolio-modal-visible')
+        segundoModal.classList.add('portfolio-modal-visivel')
+    })
+
+    terceiraImagem.addEventListener('click', () => {
+        removerModalVisivel()
+
+        terceiroModal.classList.add('portfolio-modal-visivel')
     })
 
 
-    thirdImage.addEventListener('click', () => {
-        removeModalVisible()
+    btnsFecharModal.forEach(btnFecharModal => {
+        btnFecharModal.addEventListener('click', () => {
+            const elementoPai = btnFecharModal.parentElement
 
-        ThirdModal.classList.add('portfolio-modal-visible')
-    })
-
-
-    btnsCloseModal.forEach(btnCloseModal => {
-        btnCloseModal.addEventListener('click', () => {
-            const elementParent = btnCloseModal.parentElement
-
-            elementParent.classList.remove('portfolio-modal-visible')
+            elementoPai.classList.remove('portfolio-modal-visivel')
         })
     })
 
-    function removeModalVisible() {
-        modals.forEach(modal => {
-            modal.classList.remove('portfolio-modal-visible')
+
+    function removerModalVisivel() {
+        modais.forEach(modal => {
+            modal.classList.remove('portfolio-modal-visivel')
         })
     }
 }
@@ -213,16 +213,16 @@ function faq() {
  
     boxes.forEach(box => {
         box.addEventListener('click', () => {
-            const boxAnswer = box.lastElementChild
-            const btnShow = box.firstElementChild.lastElementChild
+            const boxResposta = box.lastElementChild
+            const btnMostrar = box.firstElementChild.lastElementChild
 
-            boxAnswer.classList.toggle('faq-answer-visible')
+            boxResposta.classList.toggle('faq-resposta-visivel')
 
-            if (boxAnswer.classList.contains('faq-answer-visible')){
-                btnShow.src = '/imgs/faq/faq-close.svg'
+            if (boxResposta.classList.contains('faq-resposta-visivel')){
+                btnMostrar.src = 'imgs/faq/faq-fechar.svg'
             }
             else {
-                btnShow.src = '/imgs/faq/faq-show.svg'
+                btnMostrar.src = 'imgs/faq/faq-mostrar.svg'
             }
         })
     })
