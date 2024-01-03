@@ -82,8 +82,13 @@
 }
 
 .header-categoria-link{
+    background: linear-gradient(176deg, #6BBAFF 0.95%, #5271FF 100%);
     color:#000; 
     text-decoration:none;
+    font-weight:bold;
+    letter-spacing:2px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 
