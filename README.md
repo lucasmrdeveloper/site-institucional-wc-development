@@ -2,7 +2,7 @@
 Este projeto representa a criação de um site institucional robusto e moderno, focado na apresentação clara de informações, e funcionalidades, resultando em um layout intuitivo, informativo e visualmente atraente."
 <br>
 
-[Link para acesso](https://lucasmrdeveloper.github.io/WCDevelopment/)
+[Link para acesso](https://lucasmrdeveloper.github.io/site-institucional-wc-development)
 
 ## ✔️ Funcionalidades
 - **Navegação por Guias:** Permite alternar dinamicamente entre diferentes conjuntos de informações, apresentando conteúdo com base na guia selecionada.
